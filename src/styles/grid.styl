@@ -1,0 +1,52 @@
+// тут генератор сетки
+
+rem-calc(value)
+    u = unit(value);
+    if (u is 'rem') {
+        return unit(value, u);
+    } else {
+        return unit(value / base-font-size, 'rem')
+    }
+
+grid(direction = 'row', cells-align = 'top', justify = '')
+    display flex
+    flex-wrap wrap
+    if cells-align is 'top'
+        align-items flex-start
+    if cells-align is 'bottom'
+        align-items flex-end
+    if cells-align is 'center'
+        align-items center
+    if cells-align is 'stretch'
+        align-items stretch
+    if direction is 'row'
+        flex-direction row
+    if direction is 'column'
+        flex-direction column
+
+cell(i = 1, cols = columns, align = '', g = gutter)
+    if g is not 0
+        flex-basis: s('calc(100%% * %s - %s)', i / cols, rem-calc(g))
+    else
+        flex-basis: s('calc(100%% * %s)', i / cols)
+    min-width 0
+    if g is not 0
+        margin: rem-calc(g / 2)
+
+*
+    box-sizing border-box
+    margin 0
+    padding 0
+
+base-font-size = 16
+gutter = 20px
+columns = 12
+
+breakpoints = {
+    sm: 0,
+    md: 640px,
+    lg: 1200px,
+    xlg: 1440px,
+    xxlg: 1920px
+}
+
