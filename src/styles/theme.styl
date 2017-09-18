@@ -1,0 +1,59 @@
+// тут глобальные переменные – цветовые схемы и тд и тп
+
+@import 'grid.styl'
+
+.input
+  font-size .9em
+  border 4px solid black
+  padding 10px 20px 10px 10px
+
+.button
+  padding-left 20px
+  padding-right 20px
+  padding-top 10px
+  padding-bottom 10px
+  min-width 20px
+  border 4px solid black
+  color black
+  text-align center
+  text-decoration none
+  outline none
+  cursor pointer
+  &:hover
+    background black
+    color white
+
+.main
+  center(600px)
+  grid()
+  .full
+    padding rem-calc(20)
+    cell(1, 1, 'center')
+    display flex
+    align-items center
+    justify-content center
+    flex-direction column
+  .cell
+    padding rem-calc(20)
+
+    &.typeInput
+      cell(1, 1)
+      @media screen and (min-width: rem-calc(breakpoints[md]))
+          cell(1, 2)
+          max-width 200px
+
+    &.type1
+      cell(1, 1)
+      @media screen and (min-width: rem-calc(breakpoints[md]))
+          cell(1, 2)
+      @media screen and (min-width: rem-calc(breakpoints[lg]))
+          cell(1, 3)
+
+    &.typeFull
+      cell(1, 1)
+
+    &.type2
+      cell(1, 1, 'center')
+      @media screen and (min-width: rem-calc(breakpoints[lg]))
+          cell(1, 3, 'center')
+
