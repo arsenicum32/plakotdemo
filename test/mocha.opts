@@ -1,0 +1,4 @@
+--recursive
+--require must
+--compilers js:babel-core/register
+
