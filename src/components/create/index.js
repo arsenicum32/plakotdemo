@@ -24,8 +24,10 @@ const Create = ({ width , height, title , description , onTitleChange, onDescrip
     </div>
     <div className={cell + " " + type1}>
       <div className={poster + " " + centerContent} style={{
-        width: width < height ?  window.innerHeight*.45 : window.innerWidth *.45 +'px',
-        height: width < height ? ( height / width ) * window.innerHeight*.45 : (width / height ) * window.innerWidth*.45 +'px'
+        width: width < height ? window.innerHeight * 0.45 + 'px' : window.innerWidth * 0.45 + 'px',
+        height: width < height
+          ? (height / width) * window.innerHeight * 0.45 + 'px'
+          : (height / width) * window.innerWidth * 0.45 + 'px'
       }}>
       <h1>{title}</h1>
       <small>{description}</small>
