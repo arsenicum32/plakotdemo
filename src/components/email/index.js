@@ -19,11 +19,17 @@ const Email = ({ email , onChange , click , canSignUp , thanks }) => (
       :
       <div className={cell + " " + full} style={{ height: '45vh' }}>
          <h1>обработка...</h1>
-         <p>10 сгенерированных вариантов постера отправяться к вам на почту</p>
+         <p>10 сгенерированных вариантов постера отправятся к вам на почту</p>
          <br/>
-         <input className={input} style={{width: '100%', borderColor: email && !canSignUp ? 'orange': 'black'}} value={email}  onChange={onChange} placeholder="email" />
+         <input
+           className={input}
+           style={{width: '100%', borderColor: email.length > 0 && !canSignUp ? 'orange': 'black'}}
+           value={email}
+           onChange={onChange}
+           placeholder="email"
+         />
          {
-           canSignUp?
+           canSignUp ?
            <button className={button} onClick={click} style={{width: '100%', position: 'relative', top:'-4px'}} >отправить мне</button>
            : null
          }
