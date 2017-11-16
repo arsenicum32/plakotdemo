@@ -6,6 +6,16 @@ import Header from '../header'
 import { poster , centerContent } from './style.styl'
 import { main, cell, type1 , typeInput , button , input } from '../../styles/theme.styl'
 
+function calcPosterSize(width, height) {
+  const isPortrait = Number(width) < Number(height);
+  const base = isPortrait ? window.innerHeight * 0.45 : window.innerWidth * 0.45;
+  const ratio = isPortrait ? height / width : width / height;
+  return {
+    width: isPortrait ? base + 'px' : base + 'px',
+    height: isPortrait ? ratio * base + 'px' : (Number(height) / Number(width)) * base + 'px'
+  };
+}
+
 const Create = ({ width , height, title , description , onTitleChange, onDescriptionChange,  onWidthChange, onHeightChange }) => (
   <div className={ main } >
     <Header />
@@ -23,14 +33,9 @@ const Create = ({ width , height, title , description , onTitleChange, onDescrip
       </Link>
     </div>
     <div className={cell + " " + type1}>
-      <div className={poster + " " + centerContent} style={{
-        width: width < height ? window.innerHeight * 0.45 + 'px' : window.innerWidth * 0.45 + 'px',
-        height: width < height
-          ? (height / width) * window.innerHeight * 0.45 + 'px'
-          : (height / width) * window.innerWidth * 0.45 + 'px'
-      }}>
-      <h1>{title}</h1>
-      <small>{description}</small>
+      <div className={poster + " " + centerContent} style={calcPosterSize(width, height)}>
+        <h1>{title}</h1>
+        <small>{description}</small>
       </div>
     </div>
   </div>
