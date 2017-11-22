@@ -14,6 +14,7 @@ export default () => (
       <Route path="gallery" component={Gallery} />
       <Route path="create" component={Create} />
       <Route path="mail" component={Email} />
+      <Route path="test" component={()=>(<div><Main/><Test /></div>)} />
     </Route>
     <Route path="*" component={notFound} />
   </Router>
