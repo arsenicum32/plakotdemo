@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf dist || exit 0;
 mkdir dist;
-webpack --config webpack.config.js NODE_ENV=production --progress --profile --colors || exit 0;
+webpack --config webpack.config.js --progress --profile --colors || exit 0;
 ( cd dist
  git init
  git config user.name "arsenicum32"

@@ -1,5 +1,30 @@
 var webpack = require('webpack');
 
+
+var loaders = [
+  {
+    test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+    loader: 'file-loader'
+  },
+  {
+    test: /\.css$/,
+    loader: 'style-loader!css-loader'
+  },
+  {
+    test: /\.styl$/,
+    loader: 'style-loader!css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!stylus-loader'
+  },
+  {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loaders: ['react-hot', 'babel']
+  },
+  {
+    test: /\.html$/,
+    loader: 'file?name=[name].[ext]',
+  }
+];
+
 var environments = {
   development: {
     context: __dirname + '/src',
@@ -8,29 +33,7 @@ var environments = {
       html: './index.html',
     },
     module: {
-      loaders: [
-        {
-          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          loader: 'file-loader'
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader'
-        },
-        {
-          test: /\.styl$/,
-          loader: 'style-loader!css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!stylus-loader'
-        },
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loaders: ['react-hot', 'babel']
-        },
-        {
-          test: /\.html$/,
-          loader: 'file?name=[name].[ext]',
-        }
-      ]
+      loaders: loaders
     },
     output: {
       filename: 'app.js',
@@ -48,17 +51,7 @@ var environments = {
       html: './index.html',
     },
     module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loaders: ['babel'],
-        },
-        {
-          test: /\.html$/,
-          loader: 'file?name=[name].[ext]',
-        }
-      ]
+      loaders: loaders
     },
     plugins: [
       new webpack.optimize.UglifyJsPlugin({minimize: true})

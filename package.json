@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter",
+  "name": "Plakot demo",
   "version": "2.0.4",
-  "description": "Starter pack for React + Redux + Webpack projects",
+  "description": "Plakot starter",
   "main": "dist/app.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --hot --inline",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Prismatik/react-redux-starter.git"
+    "url": ""
   },
-  "author": "Prismatik <info@prismatik.com.au> (http://blog.prismatik.com.au)",
+  "author": "ars33",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Prismatik/react-redux-starter/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Prismatik/react-redux-starter",
+  "homepage": "http://demo.plakot.ru",
   "dependencies": {
     "history": "^2.0.1",
     "react": "^0.14.8",
