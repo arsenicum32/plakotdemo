@@ -8,6 +8,7 @@ webpack --config webpack.config.js --progress --profile --colors || exit 0;
  git config user.email "zombiehot@yandex.ru"
  cp ../CNAME ./CNAME
  cp ../index.html ./index.html
+ cp ../404.html ./404.html
  git checkout -b gh-pages
  git add .
  git commit -m "Deployed to Github Pages"

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const notFound = ()=>(
-  <div>404 error
+  <div>404 not Found page
   </div>
 )
 
