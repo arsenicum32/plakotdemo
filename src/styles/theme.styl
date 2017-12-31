@@ -3,6 +3,10 @@
 @import 'grid.styl'
 
 
+.input
+  font-size .9em
+  border 4px solid black
+  padding 10px 20px 10px 10px
 .button
   padding-left 20px
   padding-right 20px
@@ -13,6 +17,8 @@
   color black
   text-align center
   text-decoration none
+  outline none
+  cursor pointer
   &:hover
     background black
     color white
@@ -31,6 +37,12 @@
   .cell
     // отступы в 20px
     padding rem-calc(20)
+
+    &.typeInput
+      cell(1, 1)
+      @media screen and (min-width: rem-calc(breakpoints[md]))
+          cell(1, 2)
+          max-width 200px
 
     // половина когда большой экран
     &.type1
