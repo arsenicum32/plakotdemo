@@ -1,7 +1,7 @@
 {
-  "name": "Plakot demo",
+  "name": "Plakot",
   "version": "2.0.4",
-  "description": "Plakot starter",
+  "description": "Plakot-starter",
   "main": "dist/app.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --hot --inline",
